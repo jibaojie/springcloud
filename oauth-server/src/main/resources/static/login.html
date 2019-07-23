@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义登陆</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+<h1>自定义登陆</h1>
+<form id="loginForm">
+    <div>
+        用户名：<input type="text" name="username">
+    </div>
+    <div>
+        密码：<input type="password" name="password">
+    </div>
+    <div>
+        <button type="button" onclick="click2()">立即登陆</button>
+        <input type="button" onclick="click3()" value="获取token"/>
+        <input type="button" onclick="click4()" value="获取token"/>
+    </div>
+</form>
+
+<script>
+    function click2() {
+        $.post("/login",$("#loginForm").serialize(),function (data) {
+            if(data.success){
+                window.location.href="/product/index.html";
+            }else{
+                alert("登录失败："+data.msg);
+            }
+        },"json");
+    }
+    function click3() {
+        $.post("oauth/token?username=123&password=123&grant_type=password&client_id=client&client_secret=secret&scope=test", null,function (data) {
+            console.log(data);
+            if(data.success){
+
+            }else{
+                alert("登录失败："+data.msg);
+            }
+        },"json");
+    }
+    function click4() {
+        $.post("/oauth/token?grant_type=authorization_code&client=client&code=vWAqth&scope=test", null,function (data) {
+            console.log(data);
+            if(data.success){
+
+            }else{
+                alert("登录失败："+data.msg);
+            }
+        },"json");
+    }
+</script>
+
+</body>
+</html>

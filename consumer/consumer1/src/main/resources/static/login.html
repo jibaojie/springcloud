@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title>title</title>
+
+        </head>
+
+        <script>
+
+            function click2() {
+                var client_id = 'a39ae9c868a7536d0c57';
+                var authorize_uri = 'https://github.com/login/oauth/authorize';
+                var redirect_uri = 'http://localhost:8085/oauth/redirect';
+
+                var uri =authorize_uri + '?client_id=' + client_id + '&redirect_uri=' + redirect_uri;
+                window.location.href = uri;
+            }
+        </script>
+
+<body>
+<h1>这里是index页面</h1>
+<button onclick="click2()">这是授权按钮</button>
+</body>
+</html></title>
+</head>
+<body>
+
+</body>
+</html>

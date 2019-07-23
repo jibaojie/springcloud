@@ -1,0 +1,50 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    #   使用-v命名，可以让网关创建路由时自动加上前缀/v1/
+    name: consumer1-v1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://peer1:1111/eureka/
+#    消费者获取注册中心服务清单，每隔30s发送一次请求
+    registry-fetch-interval-seconds: 30
+#   eureka需要超时连接之前需要等待的时间，默认为5秒, 连接超时
+    eureka-server-connect-timeout-seconds: 7
+#   eureka需要超时读取之前需要等待的时间，默认为8秒， 读取超时
+    eureka-server-read-timeout-seconds: 8
+
+# 全局关闭hystrix支持
+#feign.hystrix.enabled=false
+
+# hystrix的默认配置
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 8000
+# 不使用hystrix的熔断功能
+#hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds : false
+
+# hystrix指定Commandkey的配置
+#hystrix.command.hello.execution.isolation.thread.timeoutInMilliseconds=5000
+
+# ribbon指定服务的配置
+#PROVIDER1.ribbon.ReadTimeout=2000
+
+# ribbon默认配置
+ribbon.ConnectTimeout: 25000
+ribbon.ReadTimeout: 10000
+ribbon.OkToRetryOnAllOperations: true
+# 尝试更换实例次数
+ribbon.MaxAutoRetriesNextServer: 2
+# 重试次数
+ribbon.MaxAutoRetries: 0
+
+# 启用压缩
+#feign:
+#  compression:
+#    request:
+#      enabled: true
+#    response:
+#      enabled: true
+

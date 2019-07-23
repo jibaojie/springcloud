@@ -1,0 +1,27 @@
+server:
+  port: 2222
+
+
+spring:
+  application:
+#   使用-v命名，可以让网关创建路由时自动加上前缀/v1/
+    name: provider1-v1
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://baojie:123456@peer1:1111/eureka/
+  instance:
+    # 用于定义服务续约任务的调用间隔时间，默认30s
+    lease-renewal-interval-in-seconds: 30
+    # 服务失效时间，默认90s
+    lease-expiration-duration-in-seconds: 90
+
+
+
+
+logging:
+  level:
+    org.springframework: debug
+    com.example: debug
+

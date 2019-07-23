@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义登陆</title>
+    <script src="./js/jquery.min.js"></script>
+</head>
+<body>
+<h1>自定义登陆</h1>
+<form id="loginForm">
+    <div>
+        用户名：<input type="text" name="username">
+    </div>
+    <div>
+        密码：<input type="password" name="password">
+    </div>
+    <dev>
+        验证码：<input type="text" name="imageCode"/> <img src="/imageCode"/>
+    </dev>
+    <div>
+        <button type="button" onclick="click2()">立即登陆</button>
+    </div>
+</form>
+
+<script>
+    function click2() {
+        $.post("/login",$("#loginForm").serialize(),function (data) {
+            if(data.success){
+                window.location.href="/product/index.html";
+            }else{
+                alert("登录失败："+data.msg);
+            }
+        },"json");
+    }
+</script>
+
+</body>
+</html>

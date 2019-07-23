@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+       <groupId>com.example</groupId>
+        <artifactId>springcloud</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.example.springcloud</groupId>
+    <artifactId>provider</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>provider</name>
+    <description>Demo project for Spring Boot</description>
+
+    <modules>
+        <module>provider1</module>
+        <!--mybatis + mapper + pagehelper + druid使用配置文件方式实现-->
+        <module>mybatis_yml</module>
+        <!--mybatis + mapper + pagehelper + druid使用java代码方式实现-->
+        <module>mybatis_conf</module>
+        <!--mybatis + mapper + pagehelper + druid使用配置文件方式实现多数据源-->
+        <module>mybatis_conf2</module>
+        <!--mybatis + mapper + pagehelper + druid使用配置文件方式实现动态添加切换数据源-->
+        <module>mybatis_conf3</module>
+        <!--自定义异常-->
+        <module>exception</module>
+        <!--mybatis一级二级缓存-->
+        <module>mybatis_cache</module>
+        <!-- mybatis拦截器 -->
+        <module>mybatis_interceptor</module>
+    </modules>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+
+    </dependencies>
+
+</project>
