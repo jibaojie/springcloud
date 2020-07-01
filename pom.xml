@@ -23,7 +23,7 @@
         <spring-cloud-starter-eureka.version>1.3.5.RELEASE</spring-cloud-starter-eureka.version>
         <spring-cloud-starter-feign.version>1.3.2.RELEASE</spring-cloud-starter-feign.version>
         <fastjson.version>1.2.48-SNAPSHOT</fastjson.version>
-        <mysql.version>8.0.11</mysql.version>
+        <mysql.version>8.0.16</mysql.version>
         <pagehelper.version>1.2.10</pagehelper.version>
         <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
         <mybatis-spring-boot-starter.version>1.3.1</mybatis-spring-boot-starter.version>
